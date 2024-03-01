@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv
 import pymongo
 import json
 from datetime import datetime
@@ -8,10 +10,12 @@ from aiogram.utils import executor
 import asyncio
 
 
+load_dotenv()
+
 client = pymongo.MongoClient("mongodb://localhost:27017")
 collection = client["mongo"]["employees"]
 
-bot = Bot(token="7084193547:AAG_ZI1oxQ4SYuUHm6NebyF3p9UO-2DBC6Q")
+bot = Bot(token=os.getenv("TOKEN"))
 dp = Dispatcher(bot)
 
 
