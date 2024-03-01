@@ -18,7 +18,7 @@ dp = Dispatcher(bot)
 async def generate_dates(dt_from, dt_upto, group_type):
     freq_map = {"hour": "h", "day": "D", "month": "MS"}
     if group_type not in freq_map:
-        raise ValueError("Такая группировка не предусморена")
+        raise ValueError("Такая группировка не предусмотрена")
     return pd.date_range(start=dt_from, end=dt_upto, freq=freq_map[group_type])
 
 
